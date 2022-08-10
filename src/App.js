@@ -2,27 +2,22 @@ import React, {Component} from 'react';
 import Layout from  './components/Layout/Layout';
 import BurgerBuilder from './containers/BurgerBuilder/BurgerBuilder';
 import Checkout from './containers/BurgerBuilder/Checkout/Checkout';
-import { Route, Switch } from 'react-router-dom';
+import { Routes, Route } from "react-router-dom";
+
+
 
 class App extends Component {
 
 
-  // state = {
-  //   show:true
-  // };
-  // componentDidMount() {
-  //   setTimeout(() => {
-  //   this.setState({show:false});
-  // },5000);
 
   render() {
     return (
       <div>
        <Layout>
-         <Switch>
+         <Routes>
             <Route path="/checkout" component={Checkout} />  
             <Route path="/" exact component= {BurgerBuilder} />
-          </Switch>
+          </Routes>
        </Layout>
       </div>
     );
